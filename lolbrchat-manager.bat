@@ -31,12 +31,6 @@ IF "%op%"=="1" (
 
 	REM Limpa entradas antigas do hosts para nao duplicar
 	findstr /V /C:"chat.si.riotgames.com" /C:"LoL Chat Offline" "%HOSTS%" > "%TEMP%\hosts.tmp"
-	IF ERRORLEVEL 1 (
-		ECHO.
-		ECHO ERRO: Nao foi possivel ler o arquivo hosts.
-		PAUSE
-		EXIT
-	)
 
 	REM Adiciona o bloqueio: redireciona os servidores de chat da Riot para lugar nenhum
 	(
@@ -56,7 +50,6 @@ IF "%op%"=="1" (
 		ECHO.
 		ECHO ERRO: Nao foi possivel gravar o arquivo hosts!
 		ECHO Se o Kaspersky exibir um alerta, escolha PERMITIR e rode de novo.
-		DEL "%TEMP%\hosts.tmp" >nul 2>&1
 		PAUSE
 		EXIT
 	)
@@ -79,20 +72,7 @@ IF "%op%"=="1" (
 ) ELSE IF "%op%"=="2" (
 	REM Remove as entradas de bloqueio do hosts
 	findstr /V /C:"chat.si.riotgames.com" /C:"LoL Chat Offline" "%HOSTS%" > "%TEMP%\hosts.tmp"
-	IF ERRORLEVEL 1 (
-		ECHO.
-		ECHO ERRO: Nao foi possivel ler o arquivo hosts.
-		PAUSE
-		EXIT
-	)
 	COPY /Y "%TEMP%\hosts.tmp" "%HOSTS%" >nul
-	IF ERRORLEVEL 1 (
-		ECHO.
-		ECHO ERRO: Nao foi possivel gravar o arquivo hosts.
-		DEL "%TEMP%\hosts.tmp" >nul 2>&1
-		PAUSE
-		EXIT
-	)
 	DEL "%TEMP%\hosts.tmp" >nul 2>&1
 	ipconfig /flushdns >nul
 	netsh advfirewall firewall delete rule name="LoL Chat" >nul 2>&1
