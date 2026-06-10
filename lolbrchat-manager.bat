@@ -14,15 +14,20 @@ IF %errorLevel% == 0 (
 SET "HOSTS=%WINDIR%\System32\drivers\etc\hosts"
 
 TITLE LOLBR OFFLINE CHAT v3
-ECHO ---------------------------------------------------------
-ECHO -----------!                                !------------
-ECHO -----------!  LOLBR OFFLINE CHAT v3 - MENU  !------------
-ECHO -----------!  ___________________________   !------------
-ECHO -----------!                                !------------
-ECHO -----------!  1: Aparecer como invisivel    !------------
-ECHO -----------!  2: Aparecer como disponivel   !------------
-ECHO -----------!                                !------------
-ECHO ---------------------------------------------------------
+ECHO +-------------------------------------------------------+
+ECHO ^|                 LOLBR OFFLINE CHAT - MENU             ^|
+ECHO +-------------------------------------------------------+
+ECHO ^|                                                       ^|
+ECHO ^|                1: Aparecer como invisivel             ^|
+ECHO ^|                2: Aparecer como disponivel            ^|
+ECHO ^|                                                       ^|
+ECHO +-------------------------------------------------------+
+ECHO.
+ECHO Redes sociais:
+ECHO   github.com/brunocarazato
+ECHO   youtube.com/SenhorBizu
+ECHO   instagram.com/senhorbizu
+ECHO.
 SET /p "op=Digite o que deseja (1/2) ?: "
 
 IF "%op%"=="1" (
