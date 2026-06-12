@@ -27,6 +27,8 @@ ECHO Redes sociais:
 ECHO   github.com/brunocarazato
 ECHO   youtube.com/SenhorBizu
 ECHO   instagram.com/senhorbizu
+ECHO Contribudor:
+ECHO   github.com/guganeri
 ECHO.
 SET /p "op=Digite o que deseja (1/2) ?: "
 
